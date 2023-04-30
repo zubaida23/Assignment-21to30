@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASSIGNMENT JAVASCRIPT</title>
+    <script src="uuu.js"></script>
+</head>
+<body>
+    <h1>Number Properties</h1>
+    <p>Enter a positive integer:</p>
+    <input type="number" id="numberInput" />
+    <br />
+    <button onclick="calculate()">Calculate</button>
+    <br />
+    <p id="number"></p>
+    <p id="round"></p>
+    <p id="floor"></p>
+    <p id="ceil"></p>
+
+    <script>
+      function calculate() {
+        // Get user input
+        let userInput = document.getElementById("numberInput").value;
+
+        // Convert input to number
+        let number = Number(userInput);
+
+        // Check if input is a positive integer
+        if (Number.isInteger(number) && number > 0) {
+          // Display number and its properties
+          document.getElementById("number").innerHTML = "Number: " + number;
+          document.getElementById("round").innerHTML =
+            "Rounded Value: " + Math.round(number);
+          document.getElementById("floor").innerHTML =
+            "Floor Value: " + Math.floor(number);
+          document.getElementById("ceil").innerHTML =
+            "Ceil Value: " + Math.ceil(number);
+        } else {
+          alert("Please enter a positive integer.");
+        }
+      }
+</script>
+
+
+<h2>Enter a Negative Floating Point Number:</h2>
+	<input type="number" id="numInput" step="0.01">
+	<button onclick="displayValues()">Display Values</button>
+	<br><br>
+	<p id="output"></p>
+
+	<script>
+		function displayValues() {
+			// Get the input value and convert it to a number
+			let num = parseFloat(document.getElementById("numInput").value);
+
+			// Calculate the rounded, floored and ceiled values
+			let rounded = Math.round(num * 100) / 100;
+			let floored = Math.floor(num);
+			let ceiled = Math.ceil(num);
+
+			// Display the values in the browser
+			document.getElementById("output").innerHTML = "<strong>Number:</strong> " + num + "<br>" +
+			                                                "<strong>Rounded Value:</strong> " + rounded + "<br>" +
+			                                                "<strong>Floor Value:</strong> " + floored + "<br>" +
+			                                                "<strong>Ceil Value:</strong> " + ceiled + "<br>";
+		}
+	</script>
+</body>
+</html>
